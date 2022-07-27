@@ -1,0 +1,38 @@
+<div class="mein-wrapper">
+<div class="container">
+    <div class="page-title">
+        <h1>新規登録</h1>
+    </div>
+    <%= form_tag("/users/create") do %>
+        <div class="form">
+            <label>
+            <div class="form-title">お名前<span class="red">(必須)</span></div>
+            <input name="name" type="text" id="name_id">
+            </label>
+        </div>
+        <div class="form">
+            <label>
+            <div class="form-title">メールアドレス<span class="red">(必須)</span></div>
+            <input name="email" type="text" >
+            </label>
+        </div>
+        <div class="form">
+            <label>
+            <div class="form-title">パスワード<span class="red">(必須)</span></div>
+            <input name="password_digest" type="password">
+            </label>
+        </div>
+        <div class="form">
+            <label>
+            <div class="form-title">パスワード(確認)<span class="red">(必須)</span></div>
+            <input name="password_confirmation" type="password">
+            </label>
+        </div>
+
+        <div class="btn-wrapper">
+            <input type="submit" value="登録する">   
+        </div>
+    <% end %>
+    
+</div>
+</div>
