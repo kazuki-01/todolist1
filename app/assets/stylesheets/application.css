@@ -13,3 +13,59 @@
  *= require_tree .
  *= require_self
  */
+
+ .container {
+  width: 750px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: rgba(250, 8, 8, 1);
+  height: 40px;
+}
+
+
+.header-left {
+  float: left;
+  line-height: 40px;
+  font-size: 25px;
+  padding-left: 30px;
+  
+
+}
+
+.header-left h2 {
+  color: white;
+  font-family: normal;
+}
+
+.header-right a {
+  text-decoration: none;
+  padding: 0 25px;
+  color: white;
+  display: inline-block;
+  transition: all 0.5s;
+  
+}
+
+.header-right a:hover{
+  background-color: rgba(248, 169, 169, 1);
+}
+
+.header-right {
+  line-height: 40px;
+  float: right;
+}
+
+footer{
+  background-color: rgba(250, 8, 8, 1);
+  height: 40px;
+}
+
+footer h2 {
+  color: white;
+  line-height: 40px;
+  font-size: 25px;
+  font-family: Nothing You Could Do;
+  padding-left: 80px;
+}
