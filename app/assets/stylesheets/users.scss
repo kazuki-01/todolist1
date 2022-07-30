@@ -74,6 +74,10 @@ body {
     margin-bottom: 20px;
 }
 
+.form-title {
+  font-size: 20px;
+}
+
 
 
 /* 新規ユーザー登録 (new)ーーーーーーーーーーーーーーーーーーーーーーーーー*/
@@ -82,10 +86,6 @@ body {
 .form {
     margin: 30px 0 0 60px;
     
-}
-
-.form-title {
-    font-size: 20px;
 }
 
 .red {
@@ -166,9 +166,5 @@ body {
 .login_form input {
     width: 600px;
     height: 25px;
-    font-size: 20px;
-}
-
-label {
     font-size: 20px;
 }
