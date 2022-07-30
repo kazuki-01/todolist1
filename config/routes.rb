@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'home#top'
+  root 'home#about'
 
   get "signup" => "users#new"
   get "login" => "users#login"
