@@ -5,4 +5,7 @@ class UsersController < ApplicationController
   def login
   end
 
+  def check
+  end
+
 end
