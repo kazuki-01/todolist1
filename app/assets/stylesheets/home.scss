@@ -116,3 +116,44 @@ body {
     margin: 50px 0 10px 0;
 }
 
+/* ホーム画面（home）ーーーーーーーーーーーーーーーーーーーーーーーーー*/
+
+.home-mein-wrapper {
+    background-color: rgba(250, 8, 8, 0.09);
+    height: 590px;
+}
+
+.page-title {
+    font-size: 60px;
+    color: rgba(250, 8, 8, 1);
+    padding: 65px 0 0 30px;
+    margin-bottom: 20px;
+}
+
+.home-btn-wrapper {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.home-btn {
+    font-size: 20px;
+    width: 600px;
+    padding: 15px 0;
+    margin: 25px 0;
+    border-radius: 10px;
+    letter-spacing: 5px;
+
+}
+
+.home-btn-wrapper a {
+    background-color: rgba(250, 8, 8, 0.7);
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.2s;
+    
+}
+
+.home-btn-wrapper a:hover{
+    background-color: rgba(250, 8, 8, 1);
+}
