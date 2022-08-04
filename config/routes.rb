@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "home" => "home#home"
 
   get "signup" => "users#new"
+  post "users/create" => "users#create"
   get "login" => "users#login"
   get "check" => "users#check"
 
