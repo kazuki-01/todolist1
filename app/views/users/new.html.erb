@@ -3,34 +3,36 @@
     <div class="page-title">
         <h1>新規登録</h1>
     </div>
-    <%= form_tag("/users/create") do %>
+    <%= form_with model: @user do |form| %>
         <div class="form">
-            <label>
-            <div class="form-title">お名前<span class="red">(必須)</span></div>
-            <input name="name" type="text">
-            </label>
+            <div class="form-title">
+                <%=form.label :お名前 %><span class="red">(必須)</span><br>
+            </div>
+            <%=form.text_field :お名前 %>
         </div>
         <div class="form">
-            <label>
-            <div class="form-title">メールアドレス<span class="red">(必須)</span></div>
-            <input name="email" type="text" >
-            </label>
+            <div class="form-title">
+                <%=form.label :メールアドレス %><span class="red">(必須)</span><br>
+            </div>
+            <%=form.email_field :メールアドレス %>
         </div>
         <div class="form">
-            <label>
-            <div class="form-title">パスワード<span class="red">(必須)</span></div>
-            <input name="password_digest" type="password">
-            </label>
+            <div class="form-title">
+                <%=form.label :パスワード %><span class="red">(必須)</span><br>
+            </div>
+            <%=form.password_field :パスワード %>
         </div>
         <div class="form">
-            <label>
-            <div class="form-title">パスワード(確認)<span class="red">(必須)</span></div>
-            <input name="password_confirmation" type="password">
-            </label>
+            <div class="form-title">
+                <%=form.label :パスワード（確認） %><span class="red">(必須)</span><br>
+            </div>
+            <%=form.password_field :パスワード（確認） %>
         </div>
 
+
+
         <div class="btn-wrapper">
-            <input type="submit" value="登録する">   
+            <%= form.submit "登録する"%>   
         </div>
     <% end %>
     

@@ -10,9 +10,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(name: params[:name], email: params[:email], password_digest: params[:password_digest])
-    @user.save
-    
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to @user
+    else
+      render :new, status: :unprocessable_entity
+    end
+
   end
 
   def login
@@ -20,5 +24,7 @@ class UsersController < ApplicationController
 
   def check
   end
+
+
 
 end

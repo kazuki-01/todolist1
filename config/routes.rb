@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+    users: 'users/new',
+    sessions: 'users/sessions',
+  }
+
   root 'home#about'
   get "home" => "home#home"
+
+  devise_for :users
+
 
   get "signup" => "users#new"
   post "users/create" => "users#create"
