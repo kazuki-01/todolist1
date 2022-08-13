@@ -19,10 +19,15 @@
         <div class="header-right">
             <a href="#">ホーム</a>
             <a href="#">リスト一覧</a>
-            <a href="#">新規投稿</a>
+            <%= link_to "新規登録", new_user_path %>
+            <%= link_to "ログイン", login_path %>
+            <%= link_to "ログアウト", logout_path, method: :delete %>
         </div>
     </div>
   </header>
+
+  <%= notice %>
+  <%= alert %>
 
     <%= yield %>
 

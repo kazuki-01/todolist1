@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
 # deviseのコントローラを使う前に呼ばれるアクション
 before_action :configure_permitted_parameters, if: :devise_controller?
 
+def after_sign_in_path_for(resource)
+  home_path
+end
+
 private
 
 def after_signup_path_for(resource)

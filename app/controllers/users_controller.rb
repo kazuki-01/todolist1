@@ -1,28 +1,24 @@
 class UsersController < ApplicationController
-
-  def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  end
-
+  
   def new
     @user = User.new 
   end
 
   def create
-    @user = User.new(name: params[:お名前], email: params[:メールアドレス], password_digest: params[:パスワード])
-      redirect_to ("/check")
+    if user = User.new(name: params[:お名前], email: params[:メールアドレス], password: params[:パスワード])
+      user.save
+      session[:user_id] = user.id
+      redirect_to user_path, notice: "新規登録が完了しました。"
     else
-      render :new, status: :unprocessable_entity
+      render :new, notice: "新規登録できませんでした。"
     end
-
   end
 
-  def login
+  def show
   end
 
-  def check
+  private
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
-
-
-
 end
