@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
-  
   root 'home#about'
   get "home" => "home#home"
+  resource :user, only: [:new, :create, :show]
+
+  get 'login', to: "sessions#new"
+  post 'login', to: "sessions#create"
+  delete 'logout' => "sessions#destroy"
 
   devise_for :users
 
-
-  get "signup" => "users#new"
-  post "users/create" => "users#create"
-  get "login" => "users#login"
+ 
   get "check" => "users#check"
 
 

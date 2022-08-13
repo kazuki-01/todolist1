@@ -1,0 +1,25 @@
+<div class="mein-wrapper">
+<div class="container">
+    <div class="page-title">
+        <h1>ログイン</h1>
+    </div>
+    <%= form_with url: login_path, local: true do |form| %>
+        <div class="login_form">
+            <div class="form-title">
+                <%=form.label :メールアドレス %><br>
+            </div>
+            <%=form.email_field :メールアドレス %>
+        </div>
+        <div class="login_form">
+            <div class="form-title">
+                <%=form.label :パスワード %><br>
+            </div>
+            <%=form.password_field :パスワード %>
+        </div>
+
+        <div class="btn-wrapper">
+            <input type="submit" value="ログイン">
+        </div>
+    <% end %>
+</div>
+</div>
