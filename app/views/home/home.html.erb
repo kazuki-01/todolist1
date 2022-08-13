@@ -1,0 +1,28 @@
+<div class="home-mein-wrapper">
+<div class="container">
+    <div class="page-title">
+        <h1>
+            <script>
+                var today=new Date(); 
+            
+            //年・月・日・曜日を取得
+            var year = today.getFullYear();
+            var month = today.getMonth()+1;
+            var week = today.getDay();
+            var day = today.getDate();
+            
+            var week_ja= new Array("(日)","(月)","（火）","(水)","(木)","(金)","(土)");
+            
+            //年・月・日・曜日を書き出す
+            document.write(year+"年"+month+"月"+day+"日 "+week_ja[week]+"");
+            </script>
+        </h1>
+    </div>
+    <ul class="home-btn-wrapper">
+    
+        <a class="home-btn" href="#">新規投稿</a>
+        <a class="home-btn" href="#">リスト一覧</a>
+        <a class="home-btn" href="#">ユーザー情報</a>
+        <a class="home-btn" href="#">ログアウト</a>
+    </ul>
+</div>
