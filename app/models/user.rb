@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true ,uniqueness: true    #被らない
   validates :password_digest, presence: true,       #空白は許可しない
-                       length: {minimum: 6}  #最低６文字必要とする
+                       length: {minimum: 6} , on: :create #最低６文字必要とする
 
 
 
