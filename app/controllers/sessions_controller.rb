@@ -2,19 +2,25 @@ class SessionsController < ApplicationController
   def new
   end
 
-  def creare
+  def create
+    logger.debug("aaaaaaaaaa")
     user = User.find_by_email(params[:email])
+    logger.debug("bbbbbbbbbb")
     if user && user.authenticate(params[:password])
+      logger.debug("ccccccccc")
       session[:user_id] = user.id
+      logger.debug("ddddddddd")
       redirect_to user_path, notice: "ログインしました。"
     else
-      flash.now[:alert] = "メールアドレスもしくは、パスワードが違います。"
-      render :new
+      logger.debug("ZZZZZZZZZZ")
+      redirect_to login_path, notice: "メールアドレスもしくはパスワードが違います。"
+
     end
   end
 
   def destroy
-    session[:user.id] = nil
+    logger.debug("qqqqqqqq")
+    session[:user_id] = nil
     redirect_to root_path, notice: "ログアウトしました。"
   end
 

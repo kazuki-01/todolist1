@@ -3,7 +3,14 @@
     <div class="page-title">
         <h1>新規登録</h1>
     </div>
-    <%= form_with url: "/users/create" do |form| %>
+    <%= form_with url: user_path do |form| %>
+<% if @user.errors.any? %>
+    <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  <% end %>
         <div class="form">
             <div class="form-title">
                 <%=form.label :お名前 %><span class="red">(必須)</span><br>
