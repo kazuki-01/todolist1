@@ -6,19 +6,19 @@
 
     <div class="text-box">
         <div class="title">お名前</div>
-        <p>a</p>
+        <p><%= current_user.name %></p>
     </div>
     <div class="text-box">
         <div class="title">メールアドレス</div>
-        <p>a</p>
+        <p><%= current_user.email %></p>
     </div>
     <div class="text-box">
         <div class="title">パスワード</div>
-        <p>a</p>
+        <p><%= current_user.password_digest %></p>
     </div>
     <div class="btn-wrapper">
-        <a class="btn t" href="#">ホーム画面へ戻る</a>
-        <a class="btn" href="#">編集する</a>
+        <%= link_to "ホーム画面へ戻る", home_path, class: "btn t" %>
+        <%= link_to "編集する", edit_user_path, class: "btn" %>
     </div>
 </div>
 </div>    

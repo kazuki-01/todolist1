@@ -6,15 +6,15 @@
     <%= form_with url: login_path, local: true do |form| %>
         <div class="login_form">
             <div class="form-title">
-                <%=form.label :メールアドレス %><br>
+                <%=form.label :email %><br>
             </div>
-            <%=form.email_field :メールアドレス %>
+            <%=form.email_field :email%>
         </div>
         <div class="login_form">
             <div class="form-title">
-                <%=form.label :パスワード %><br>
+                <%=form.label :password %><br>
             </div>
-            <%=form.password_field :パスワード %>
+            <%=form.password_field :password %>
         </div>
 
         <div class="btn-wrapper">

@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_action :already_login?, except: :destroy
   def new
   end
 
@@ -21,7 +22,7 @@ class SessionsController < ApplicationController
   def destroy
     logger.debug("qqqqqqqq")
     session[:user_id] = nil
-    redirect_to root_path, notice: "ログアウトしました。"
+    redirect_to root_path, notice: "ログアウトしました。" 
   end
 
 end
