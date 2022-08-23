@@ -23,15 +23,18 @@ before_action :login?, only: :show
 
 
   def edit
+    @user = current_user
   end
 
 
 
   def update
-    if current_user.update(user_params)
-     redirect_to root_path
+    @user = current_user
+    if @user.update(name: params[:お名前], email: params[:メールアドレス], password: params[:パスワード])
+       redirect_to user_path, notice: "ユーザー情報を編集しました"
     else
-    render :edit
+      flash.now[:danger] = "編集に失敗しました"
+      render :edit, status: :unprocessable_entity
     end
   end
 

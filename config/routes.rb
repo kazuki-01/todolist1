@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'login', to: "sessions#new"
   post 'login', to: "sessions#create"
+  get 'update', to: "users#edit"
+  patch 'update', to: "users#update"
   delete 'logout' => "sessions#destroy"
 
   devise_for :users
