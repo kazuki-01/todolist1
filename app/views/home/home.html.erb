@@ -20,9 +20,8 @@
         </h1>
     </div>
     <ul class="home-btn-wrapper">
-    
-        <a class="home-btn" href="#">新規投稿</a>
-        <a class="home-btn" href="#">リスト一覧</a>
+        <%= link_to "新規投稿", new_post_path, class: "home-btn" %>
+        <%= link_to "リスト一覧", posts_path, class: "home-btn" %>
         <%= link_to "ユーザー情報", user_path, class: "home-btn" %>
         <%= link_to t("ログアウト"), logout_path, data: {turbo_method: :delete, turbo_confirm: 'ログアウトしてよろしいですか？'}, class: "home-btn" %>
     </ul>

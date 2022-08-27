@@ -7,5 +7,10 @@ class User < ApplicationRecord
                        length: {minimum: 6} , on: :create #最低６文字必要とする
 
 
+  #UserはたくさんのTweetを持っています(User has many tweets.) 。なので
+
+  has_many :posts  # これを追加
+
+
 
 end

@@ -1,0 +1,29 @@
+<div class="mein-wrapper">
+    <div class="container">
+        <div class="page-title">
+            <h1></h1>
+        </div>
+
+        <table class="table">
+            <tr>
+                <th></th>
+                <th width="480"><p>タイトル</p></th>
+                <th><p>編集</p></th>
+                <th><p>削除</p></th>
+            </tr>
+            <tr>
+            <% @posts.each do |post| %>
+                <td><input type="checkbox"></td>
+                <td width="480"><a href="#"><%= post.title %></a></td>
+                <td><a href="#">編集</a></td>
+                <td><a href="#">削除</a></td>
+            </tr>
+            <% end %>
+        </table>
+
+        <div class="btn-wrapper">
+            <%= link_to "新規投稿する", new_post_path, class: "btn t" %>
+            <%= link_to "ホーム画面へ戻る", home_path, class: "btn" %>
+        </div>
+    </div>
+</div>    

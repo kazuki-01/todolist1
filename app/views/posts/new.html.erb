@@ -1,0 +1,17 @@
+<div class="mein-wrapper">
+  <div class="container">
+    <div class="page-title">
+        <h1>新規投稿</h1>
+    </div>
+    <%= form_with url: posts_path do |form| %>
+
+            <textarea class="textlines" name="title" placeholder="30文字以内で入力してください。"></textarea>
+
+        <div class="btn-wrapper">
+            <input class="btn t" type="submit" value="投稿する">
+    <%end%>
+            <%= link_to "リスト一覧に戻る", posts_path, class: "btn" %>
+        </div>
+    </form>
+  </div>
+</div>    
