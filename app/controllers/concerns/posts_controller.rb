@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]  # deviseのメソッドで「ログインしていないユーザーをログイン画面に送る」メソッド
+  #before_action :authenticate_user!, except: [:index]  # deviseのメソッドで「ログインしていないユーザーをログイン画面に送る」メソッド
 
 def index
   @posts = Post.all
@@ -18,6 +18,7 @@ end
 def create
   logger.debug("cccccc")
   @post = Post.new(title: params[:title])
+  @post.user_id = current_user.id # user_idの情報はフォームからはきていないので、deviseのメソッドを使って「ログインしている自分のid」を代入
   logger.debug("dddddd")
   if @post.save
     logger.debug("eeeeee")
