@@ -35,9 +35,17 @@ def show
 end
 
 def edit
+  @post = Post.find(params[:id])
 end
 
 def update
+  @post = Post.find(params[:id])
+  if @post.update(title: params[:title])
+    redirect_to post_path, notice: "ユーザー情報を編集しました"
+  else
+    flash.now[:danger] = "編集に失敗しました"
+    render :edit_post_path, status: :unprocessable_entity
+  end
 end
 
 def destroy

@@ -13,8 +13,8 @@
         <p><%= @post.created_at %></p>
     </div>
     <div class="show-btn-wrapper">
-        <a class="btn l" href="#">リスト一覧に戻る</a>
-        <a class="btn t" href="#">編集する</a>
+        <%= link_to "リスト一覧に戻る", posts_path, class: "btn l" %>
+        <%= link_to "編集する", edit_post_path, class: "btn t" %>
         <a class="btn" href="#">削除する</a>
     </div>
 </div>
