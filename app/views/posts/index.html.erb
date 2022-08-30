@@ -15,8 +15,8 @@
             <% @posts.each do |post| %>
                 <td><input type="checkbox"></td>
                 <td width="480"><%=link_to post.title, post_path(post.id) %></td>
-                <td><%= link_to "編集",edit_post_path(post.id) %></td>
-                <td><a href="#">削除</a></td>
+                <td><%= link_to "編集", edit_post_path(post.id) %></td>
+                <td><%= link_to "削除", post_path(post), data: {turbo_method: :delete, turbo_confirm: '削除してよろしいですか？'} %></td>
             </tr>
             <% end %>
         </table>
