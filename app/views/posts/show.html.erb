@@ -13,9 +13,9 @@
         <p><%= @post.created_at %></p>
     </div>
     <div class="show-btn-wrapper">
-        <%= link_to "リスト一覧に戻る", posts_path, class: "btn l" %>
-        <%= link_to "編集する", edit_post_path, class: "btn t" %>
-        <a class="btn" href="#">削除する</a>
+        <%= link_to "編集する", edit_post_path, class: "btn l" %>
+        <%= link_to "削除", post_path , data: {turbo_method: :delete, turbo_confirm: '削除してよろしいですか？'}, class: "btn t" %>
+        <%= link_to "リスト一覧に戻る", posts_path, class: "btn" %>
     </div>
 </div>
 </div>    
