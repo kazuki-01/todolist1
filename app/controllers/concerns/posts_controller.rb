@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   #before_action :authenticate_user!, except: [:index]  # deviseのメソッドで「ログインしていないユーザーをログイン画面に送る」メソッド
 
 def index
-  @posts = Post.all
+  @posts = Post.all.order(:id)
 
   
   # 投稿順(最新順)にデータを表示させるようにする
@@ -10,9 +10,9 @@ end
 
 
 def new
-  logger.debug("aaaaa")
+  
   @post = Post.new
-  logger.debug("bbbbbb")
+  
 end
 
 def create
@@ -30,8 +30,10 @@ end
 
 
 def show
-  @post = Post.find(params[:id])
-
+  @post = Post.find_by(id: params[:id])
+  if @post.nil?
+    redirect_to action: :index
+  end
 end
 
 def edit
@@ -41,14 +43,21 @@ end
 def update
   @post = Post.find(params[:id])
   if @post.update(title: params[:title])
-    redirect_to post_path, notice: "ユーザー情報を編集しました"
+    redirect_to posts_path, notice: "ユーザー情報を編集しました"
   else
-    flash.now[:danger] = "編集に失敗しました"
-    render :edit_post_path, status: :unprocessable_entity
+    flash.now[:alert] = #動作していない・・・・
+    logger.debug("aaaaa")
+    redirect_to edit_post_url, notice: "編集に失敗しました"
+    logger.debug("bbbbbb")
   end
 end
 
 def destroy
+  @post = Post.find(params[:id])
+  @post.destroy
+  
+  redirect_to post_path, notice: "投稿を削除しました"
+  
 end
 
 
