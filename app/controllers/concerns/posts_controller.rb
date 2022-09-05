@@ -2,9 +2,7 @@ class PostsController < ApplicationController
   #before_action :authenticate_user!, except: [:index]  # deviseのメソッドで「ログインしていないユーザーをログイン画面に送る」メソッド
 
 def index
-  @posts = Post.all.order(:id)
-
-  
+  @posts = Post.where(user_id: current_user.id).order(:id)
   # 投稿順(最新順)にデータを表示させるようにする
 end
 
@@ -17,8 +15,9 @@ end
 
 def create
   logger.debug("cccccc")
-  @post = Post.new(title: params[:title])
-  @post.user_id = current_user.id # user_idの情報はフォームからはきていないので、deviseのメソッドを使って「ログインしている自分のid」を代入
+  @post = Post.new(title: params[:title],
+                   user_id: @current_user.id, 
+  ) # user_idの情報はフォームからはきていないので、deviseのメソッドを使って「ログインしている自分のid」を代入
   logger.debug("dddddd")
   if @post.save
     logger.debug("eeeeee")
@@ -63,9 +62,15 @@ end
 
 private
   def posts_params
-    params.require(:post).permit(:title)
+    params.require(:post).permit(:title, :done)
   end
 
-
+  def toggle
+    head :no_content
+    @post = Post.find(params[:id])
+    @post.done = !@post.done
+    logger.debug("aaaaa")
+    @post.save
+  end
 
 end
