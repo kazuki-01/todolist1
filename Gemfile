@@ -73,3 +73,5 @@ group :test do
 end
 
 gem 'devise'
+
+gem 'jquery-rails', '~>4.3.1'
