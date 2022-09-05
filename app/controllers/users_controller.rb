@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-before_action :already_login?, only: [:new, :create]  #new,createは。ログインしていたら、アプリケーションコントローラーで指定しているページへ画面遷移する
-before_action :login?, only: :show
+
   def new
     @user = User.new 
   end
@@ -43,7 +42,7 @@ before_action :login?, only: :show
   def destroy
     logger.debug("qqqqqqqq")
     session[:user_id] = nil
-    redirect_to root_path, notice: "ログアウトしました。" 
+    redirect_to login_path, notice: "ログアウトしました。" 
   end
 
   private
