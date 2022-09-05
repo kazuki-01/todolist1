@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'home#about'
+  post '/posts/:id/toggle' => 'posts#toggle'
   get "home" => "home#home"
   resource :user
   resources :posts

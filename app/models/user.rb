@@ -6,6 +6,10 @@ class User < ApplicationRecord
   validates :password_digest, presence: true,       #空白は許可しない
                        length: {minimum: 6} , on: :create #最低６文字必要とする
 
+  def posts
+    Post.where(user_id: self.id)
+  end
+
 
   #UserはたくさんのTweetを持っています(User has many tweets.) 。なので
 
