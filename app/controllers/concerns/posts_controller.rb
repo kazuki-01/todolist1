@@ -60,17 +60,18 @@ def destroy
 end
 
 
+def toggle
+  head :no_content
+  @post = Post.find(params[:id])
+  @post.done = !@post.done
+  logger.debug("aaaaa")
+  @post.save
+end
+
+
 private
   def posts_params
     params.require(:post).permit(:title, :done)
-  end
-
-  def toggle
-    head :no_content
-    @post = Post.find(params[:id])
-    @post.done = !@post.done
-    logger.debug("aaaaa")
-    @post.save
   end
 
 end
