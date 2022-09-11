@@ -9,13 +9,13 @@
             <div class="form-title">
                 <%=form.label :お名前 %><span class="red">(必須)</span><br>
             </div>
-            <%=form.text_field :お名前 %>
+            <%=form.text_field :お名前, placeholder: @user.name %>
         </div>
         <div class="form">
             <div class="form-title">
                 <%=form.label :メールアドレス %><span class="red">(必須)</span><br>
             </div>
-            <%=form.email_field :メールアドレス %>
+            <%=form.email_field :メールアドレス, placeholder: @user.email %>
         </div>
         <div class="form">
             <div class="form-title">
