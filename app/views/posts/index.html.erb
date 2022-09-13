@@ -12,12 +12,15 @@
                 <th><p>削除</p></th>
             </tr>
             <tr>
-            <% @posts.each do |post| %>
-                <td><%= check_box_tag '', '', post.done, {'data-id' => post.id } %></td>
-                <td width="480"><%=link_to post.title, post_path(post.id) %></td>
-                <td><%= link_to "編集", edit_post_path(post.id) %></td>
-                <td><%= link_to "削除", post_path(post), data: {turbo_method: :delete, turbo_confirm: '削除してよろしいですか？'} %></td>
-            </tr>
+            <%= form_with url: root_path(@post), method: "post" do |form| %>
+            <input class="btn t" type="submit" value="更新">
+              <% @posts.each do |post|%>
+                  <td><%= check_box_tag '', '', post.done, {'data-id' => post.id } %></td>
+                  <td width="480"><%=link_to post.title, post_path(post.id) %></td>
+                  <td><%= link_to "編集", edit_post_path(post.id) %></td>
+                 <td><%= link_to "削除", post_path(post), data: {turbo_method: :delete, turbo_confirm: '削除してよろしいですか？'} %></td>
+              </tr>
+              <% end %>
             <% end %>
         </table>
 
@@ -27,11 +30,3 @@
         </div>
     </div>
 </div>    
-
-<script>
-$(function(){
-$("input[type=checkbox]").click(function(){
-$.post('/posts/' + $(this).data('id') + '/toggle');
-});
-});
-</script>
