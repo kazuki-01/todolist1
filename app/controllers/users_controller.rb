@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
 
+  before_action :already_login?, only: [:new, :create]
+
   def new
-    @user = User.new 
+    @user = User.new
+    
   end
 
   def create
@@ -14,6 +17,11 @@ class UsersController < ApplicationController
       render :new, status: :unprocessable_entity
       logger.debug("bbbbb")
     end
+  end
+
+  def check
+    @user = User.new(name: params[:お名前], email: params[:メールアドレス], password: params[:パスワード])
+
   end
 
   def show
