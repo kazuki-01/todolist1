@@ -74,4 +74,6 @@ end
 
 gem 'devise'
 
-gem 'jquery-rails', '~>4.3.1'
+gem 'jquery-rails'
+gem 'mini_racer'
+gem 'bootstrap', '~> 4.1.1'
