@@ -40,8 +40,9 @@ class UsersController < ApplicationController
     if @user.update(name: params[:お名前], email: params[:メールアドレス], password: params[:パスワード])
        redirect_to user_path, notice: "ユーザー情報を編集しました"
     else
-      flash.now[:danger] = "編集に失敗しました"
-      render :edit, status: :unprocessable_entity
+      
+      
+      redirect_to edit_user_path, alert: "編集に失敗しました"
     end
   end
 
