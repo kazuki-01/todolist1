@@ -3,7 +3,7 @@
     <div class="page-title">
         <h1>投稿編集</h1>
     </div>
-        <%= form_with(model: @post, url: post_path(@post), method: "patch") %>
+        <%= form_with(model: @post, method: "patch") %>
         
             <textarea class="textlines"name="title"  placeholder=""><%=@post.title %></textarea>
 
