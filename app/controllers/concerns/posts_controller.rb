@@ -23,7 +23,7 @@ def create
     
     redirect_to posts_path, notice: "リストを追加しました。"
   else
-    
+
     redirect_to new_post_url, alert: "リストを追加できませんでした。"
     logger.debug("eeeeee")
   end
@@ -44,7 +44,7 @@ end
 def update
   @post = Post.find(params[:id])
   if @post.update(title: params[:title])
-    redirect_to posts_path, notice: "ユーザー情報を編集しました"
+    redirect_to posts_path, notice: "リストを編集しました"
   else
     flash.now[:alert] = #動作していない・・・・
     logger.debug("aaaaa")
