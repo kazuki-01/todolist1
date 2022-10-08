@@ -12,7 +12,7 @@
                 <th><p>削除</p></th>
             </tr>
             <tr>
-            <%= form_with url: root_path(@post), method: "post" do |form| %>
+            <%= form_with model:@post ,local:true do |form| %>
             <input class="btn t" type="submit" value="更新">
               <% @posts.each do |post|%>
                   <td><%= check_box_tag '', '', post.done, {'data-id' => post.id } %></td>
