@@ -57,6 +57,10 @@ header {
   float: right;
 }
 
+.messege {
+  background-color: #24ff00;
+}
+
 footer{
   background-color: rgba(250, 8, 8, 1);
   height: 40px;

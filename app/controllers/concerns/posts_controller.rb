@@ -20,10 +20,12 @@ def create
   ) # user_idの情報はフォームからはきていないので、deviseのメソッドを使って「ログインしている自分のid」を代入
   logger.debug("dddddd")
   if @post.save
-    logger.debug("eeeeee")
+    
     redirect_to posts_path, notice: "リストを追加しました。"
   else
-    render :new, notice: "リストを追加できませんでした。", status: :unprocessable_entity
+
+    redirect_to new_post_url, alert: "リストを追加できませんでした。"
+    logger.debug("eeeeee")
   end
 end
 
@@ -42,11 +44,11 @@ end
 def update
   @post = Post.find(params[:id])
   if @post.update(title: params[:title])
-    redirect_to posts_path, notice: "ユーザー情報を編集しました"
+    redirect_to posts_path, notice: "リストを編集しました"
   else
     flash.now[:alert] = #動作していない・・・・
     logger.debug("aaaaa")
-    redirect_to edit_post_url, notice: "編集に失敗しました"
+    redirect_to edit_post_url, alert: "編集に失敗しました"
     logger.debug("bbbbbb")
   end
 end

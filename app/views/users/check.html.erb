@@ -3,23 +3,24 @@
     <div class="page-title">
         <h1>登録内容の確認</h1>
     </div>
-
-    <div class="text-box">
-        <div class="title">お名前</div>
-        <p>テスト　太郎</p>
-    </div>
-    <div class="text-box">
-        <div class="title">メールアドレス</div>
-        <p>todo@gmail.com</p>
-    </div>
-    <div class="text-box">
-        <div class="title">パスワード</div>
-        <p>●●●●●●●</p>
-    </div>
-    <div class="btn-wrapper">
-        <p>こちら内容で登録してよろしいですか？</p>
-        <a class="btn t" href="#">登録する</a>
-        <a class="btn" href="#">修正する</a>
+<%= form_with url: user_path, method:"post" do |form| %>
+        <div class="text-box">
+           <div class="title"><%=form.label :お名前 %></div>
+           <p><input name="お名前" value="<%= @user.name %>"></p>
+       </div>
+       <div class="text-box">
+           <div class="title"><%=form.label :メールアドレス %></div>
+           <p><input name="メールアドレス" value="<%= @user.email %>"></p>
+       </div>
+       <div class="text-box">
+           <div class="title"><%=form.label :パスワード  %></div>
+           <p><input name="パスワード" value="<%= @user.password %>"></p>
+       </div>
+       <div class="btn-wrapper">
+           <p>こちら内容で登録してよろしいですか？</p>
+           <%= form.submit "登録する"%>
+<% end %>
+        <a class="btn" href="/user/new">修正する</a>
     </div>
 </div>
 </div>    
