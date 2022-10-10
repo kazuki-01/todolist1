@@ -3,12 +3,7 @@
     <div class="page-title">
         <h1>新規投稿</h1>
     </div>
-<<<<<<< HEAD
-    <%= form_with url: posts_path do |form| %>
-
-=======
     <%= form_with model:@post ,local:true do |form| %>
->>>>>>> cf7723b (コミット)
             <textarea class="textlines" name="title" placeholder="投稿する内容を入力してください。"></textarea>
 
         <div class="btn-wrapper">
