@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_current_user
   before_action :already_login?, only: [:new, :create]  #new,createは。ログインしていたら、アプリケーションコントローラーで指定しているページへ画面遷移する
-  before_action :login?, only: [:show, :edit, :index, :update, :destroy]
+  before_action :login?, only: [:show, :edit, :index]
 
 
   def current_user
