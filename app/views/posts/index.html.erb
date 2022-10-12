@@ -5,28 +5,28 @@
         </div>
 
         <table class="table">
-            <tr>
-                <th></th>
-                <th width="480"><p>タイトル</p></th>
-                <th><p>編集</p></th>
-                <th><p>削除</p></th>
-            </tr>
-            <tr>
-            <%= form_with url: "/posts/1/toggle", method: "post",local:true do |form| %>
+          <tr>
+            <th></th>
+            <th width="480"><p>タイトル</p></th>
+            <th><p>編集</p></th>
+            <th><p>削除</p></th>
+          </tr>
+          <%= form_with url: "/posts/1/toggle", method: "post",local:true do |form| %>
             <input class="btn t" type="submit" value="更新" >
               <% @posts.each do |post|%>
+                <tr>
                   <td><%= check_box_tag 'done', '', post.done, {'data-id' => post.id } %></td>
                   <td width="480"><%=link_to post.title, post_path(post.id) %></td>
                   <td><%= link_to "編集", edit_post_path(post.id) %></td>
-                 <td><%= link_to "削除", post_path(post), data: {turbo_method: :delete, turbo_confirm: '削除してよろしいですか？'} %></td>
-              </tr>
+                  <td><%= link_to "削除", post_path(post), data: {turbo_method: :delete, turbo_confirm: '削除してよろしいですか？'} %></td>
+                </tr>
               <% end %>
-            <% end %>
+          <% end %>
         </table>
 
         <div class="btn-wrapper">
-            <%= link_to "新規投稿する", new_post_path, class: "btn t" %>
-            <%= link_to "ホーム画面へ戻る", home_path, class: "btn" %>
+          <%= link_to "新規投稿する", new_post_path, class: "btn t" %>
+          <%= link_to "ホーム画面へ戻る", home_path, class: "btn" %>
         </div>
     </div>
 </div>    
