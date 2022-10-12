@@ -1,21 +1,23 @@
 <div class="mein-wrapper">
-<div class="container">
+  <div class="container">
     <div class="page-title">
-        <h1>投稿詳細</h1>
+      <h1>投稿詳細</h1>
     </div>
 
     <div class="text-box">
         <div class="title">タイトル</div>
         <p><%= @post.title %></p>
     </div>
+
     <div class="text-box">
         <div class="title">投稿時間</div>
         <p><%= @post.created_at %></p>
     </div>
+
     <div class="show-btn-wrapper">
         <%= link_to "編集する", edit_post_path, class: "btn l" %>
         <%= link_to "削除", post_path , data: {turbo_method: :delete, turbo_confirm: '削除してよろしいですか？'}, class: "btn t" %>
         <%= link_to "リスト一覧に戻る", posts_path, class: "btn" %>
     </div>
-</div>
+  </div>
 </div>    

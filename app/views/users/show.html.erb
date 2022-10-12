@@ -1,24 +1,28 @@
 <div class="mein-wrapper">
-<div class="container">
+  <div class="container">
     <div class="page-title">
-        <h1>ユーザー情報</h1>
+      <h1>ユーザー情報</h1>
     </div>
 
     <div class="text-box">
-        <div class="title">お名前</div>
+      <div class="title">お名前</div>
         <p><%= current_user.name %></p>
     </div>
+
     <div class="text-box">
-        <div class="title">メールアドレス</div>
-        <p><%= current_user.email %></p>
+      <div class="title">メールアドレス</div>
+      <p><%= current_user.email %></p>
     </div>
+
     <div class="text-box">
-        <div class="title">パスワード</div>
-        <p><%= current_user.password_digest %></p>
+      <div class="title">パスワード</div>
+      <p><%= current_user.password_digest %></p>
     </div>
+
     <div class="btn-wrapper">
-        <%= link_to "ホーム画面へ戻る", home_path, class: "btn t" %>
-        <%= link_to "編集する", edit_user_path, class: "btn" %>
+      <%= link_to "ホーム画面へ戻る", home_path, class: "btn t" %>
+      <%= link_to "編集する", edit_user_path, class: "btn" %>
     </div>
-</div>
+
+  </div>
 </div>    

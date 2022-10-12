@@ -1,25 +1,27 @@
 <div class="mein-wrapper">
-<div class="container">
+  <div class="container">
     <div class="page-title">
-        <h1>ログイン</h1>
+      <h1>ログイン</h1>
     </div>
+
     <%= form_with url: login_path, local: true do |form| %>
-        <div class="login_form">
-            <div class="form-title">
-                <%=form.label :email %><br>
-            </div>
-            <%=form.email_field :email%>
+      <div class="login_form">
+        <div class="form-title">
+          <%=form.label :email %><br>
         </div>
-        <div class="login_form">
-            <div class="form-title">
-                <%=form.label :password %><br>
-            </div>
-            <%=form.password_field :password %>
+          <%=form.email_field :email%>
+      </div>
+
+      <div class="login_form">
+        <div class="form-title">
+          <%=form.label :password %><br>
         </div>
+          <%=form.password_field :password %>
+      </div>
 
         <div class="btn-wrapper">
             <input type="submit" value="ログイン">
         </div>
     <% end %>
-</div>
+  </div>
 </div>

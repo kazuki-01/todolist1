@@ -1,50 +1,49 @@
 <div class="mein-wrapper">
-<div class="container">
+  <div class="container">
     <div class="page-title">
         <h1>ユーザー編集</h1>
     </div>
-    <%= form_with url: user_path ,method: :patch do |form| %>
 
+    <%= form_with url: user_path ,method: :patch do |form| %>
         <div class="form">
-            <div class="form-title">
-                <%=form.label :お名前 %><span class="red">(必須)</span><br>
-            </div>
+          <div class="form-title">
+            <%=form.label :お名前 %><span class="red">(必須)</span><br>
+          </div>
             <%=form.text_field :お名前, placeholder: @user.name %>
         </div>
+
         <div class="form">
-            <div class="form-title">
-                <%=form.label :メールアドレス %><span class="red">(必須)</span><br>
-            </div>
+          <div class="form-title">
+            <%=form.label :メールアドレス %><span class="red">(必須)</span><br>
+          </div>
             <%=form.email_field :メールアドレス, placeholder: @user.email %>
         </div>
 
         <div class="form1">
-            <div class="checkbox">
-               <input type="checkbox"> <p>パスワードを変更する</p>
-            </div>
+          <div class="checkbox">
+            <input type="checkbox"> <p>パスワードを変更する</p>
+          </div>
         </div>
 
         <div class="form">
-            <div class="form-title">
-                <%=form.label :パスワード %><span class="red">(必須)</span><br>
-            </div>
+          <div class="form-title">
+            <%=form.label :パスワード %><span class="red">(必須)</span><br>
+          </div>
             <%=form.password_field :パスワード %>
         </div>
+
         <div class="form">
-            <div class="form-title">
-                <%=form.label :パスワード（確認） %><span class="red">(必須)</span><br>
-            </div>
+          <div class="form-title">
+            <%=form.label :パスワード（確認） %><span class="red">(必須)</span><br>
+          </div>
             <%=form.password_field :パスワード（確認） %>
         </div>
-
-
 
         <div class="btn-wrapper">
           <input class="btn" type="submit" value="編集する">
           <%= link_to "ユーザー情報へ戻る", user_path, class: "btn t" %>
-          
         </div>
     <% end %>
-    
-</div>
+
+  </div>
 </div>

@@ -1,16 +1,18 @@
 <div class="mein-wrapper">
   <div class="container">
     <div class="page-title">
-        <h1>新規投稿</h1>
+      <h1>新規投稿</h1>
     </div>
+  
     <%= form_with model:@post ,local:true do |form| %>
-            <textarea class="textlines" name="title" placeholder="投稿する内容を入力してください。"></textarea>
+      <textarea class="textlines" name="title" placeholder="投稿する内容を入力してください。"></textarea>
 
-        <div class="btn-wrapper">
-            <input class="btn t" type="submit" value="投稿する">
+      <div class="btn-wrapper">
+        <input class="btn t" type="submit" value="投稿する">
     <%end%>
-            <%= link_to "リスト一覧に戻る", posts_path, class: "btn" %>
-        </div>
+
+        <%= link_to "リスト一覧に戻る", posts_path, class: "btn" %>
+      </div>
     </form>
   </div>
 </div>    
