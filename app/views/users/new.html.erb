@@ -1,47 +1,50 @@
 <div class="mein-wrapper">
-<div class="container">
+  <div class="container">
     <div class="page-title">
         <h1>新規登録</h1>
     </div>
-    <%= form_with url: user_path do |form| %>
-<% if @user.errors.any? %>
-    <ul>
-    <% @user.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+
+    <%= form_with url: check_path ,method: :get do |form| %>
+      <% if @user.errors.any? %>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        </ul>
+          <% end %>
+      <% end %>
+
+      <div class="form">
+        <div class="form-title">
+          <%=form.label :お名前 %><span class="red">(必須)</span><br>
+        </div>
+          <%=form.text_field :お名前 %>
+      </div>
+
+      <div class="form">
+        <div class="form-title">
+          <%=form.label :メールアドレス %><span class="red">(必須)</span><br>
+        </div>
+          <%=form.email_field :メールアドレス %>
+      </div>
+
+      <div class="form">
+        <div class="form-title">
+          <%=form.label :パスワード %><span class="red">(必須)</span><br>
+        </div>
+          <%=form.password_field :パスワード %>
+      </div>
+
+      <div class="form">
+        <div class="form-title">
+          <%=form.label :パスワード（確認） %><span class="red">(必須)</span><br>
+        </div>
+          <%=form.password_field :パスワード（確認） %>
+      </div>
+
+      <div class="btn-wrapper">
+        <%= form.submit "登録する"%>   
+      </div>
     <% end %>
-    </ul>
-  <% end %>
-        <div class="form">
-            <div class="form-title">
-                <%=form.label :お名前 %><span class="red">(必須)</span><br>
-            </div>
-            <%=form.text_field :お名前 %>
-        </div>
-        <div class="form">
-            <div class="form-title">
-                <%=form.label :メールアドレス %><span class="red">(必須)</span><br>
-            </div>
-            <%=form.email_field :メールアドレス %>
-        </div>
-        <div class="form">
-            <div class="form-title">
-                <%=form.label :パスワード %><span class="red">(必須)</span><br>
-            </div>
-            <%=form.password_field :パスワード %>
-        </div>
-        <div class="form">
-            <div class="form-title">
-                <%=form.label :パスワード（確認） %><span class="red">(必須)</span><br>
-            </div>
-            <%=form.password_field :パスワード（確認） %>
-        </div>
 
-
-
-        <div class="btn-wrapper">
-            <%= form.submit "登録する"%>   
-        </div>
-    <% end %>
-    
-</div>
+  </div>
 </div>
