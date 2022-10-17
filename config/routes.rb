@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
   get "home" => "home#home"
   resource :user
+  get '/check' => 'users#check'
   resources :posts
   post '/posts/:id/toggle' => 'posts#toggle'
 
