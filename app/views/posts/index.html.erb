@@ -11,7 +11,7 @@
         <th><p>編集</p></th>
         <th><p>削除</p></th>
       </tr>
-      <%= form_with url: "/posts/1/toggle", method: "post",local:true do |form| %>
+      <%= form_with url: "/posts/#{@id}/toggle", method: "post",local:true do |form| %>
         <input class="btn t" type="submit" value="更新" >
           <% @posts.each do |post|%>
             <tr>

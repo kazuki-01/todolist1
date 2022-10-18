@@ -65,10 +65,14 @@ end
 def toggle
   head :no_content
   @post = Post.find(params[:id])
-  @post.done = !@post.done
+  logger.debug(@post)
+  logger.debug("11111")
+  @post.update(done: params[:done])
   logger.debug("aaaaa")
   @post.save
 end
+
+@id = 1
 
 
 private
