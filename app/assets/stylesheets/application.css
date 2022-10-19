@@ -57,8 +57,20 @@ header {
   float: right;
 }
 
-.messege {
+.notice {
   background-color: #24ff00;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.alert {
+  background-color: #0047FE;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  white-space: nowrap;
 }
 
 footer{
