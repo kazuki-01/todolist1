@@ -72,7 +72,6 @@ def toggle
   @post.save
 end
 
-@id = 1
 
 
 private
