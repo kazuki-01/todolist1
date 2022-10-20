@@ -14,15 +14,17 @@ class SessionsController < ApplicationController
       redirect_to user_path, notice: "ログインしました。"
     else
       logger.debug("ZZZZZZZZZZ")
-      redirect_to login_path, notice: "メールアドレスもしくはパスワードが違います。"
+      redirect_to action: :new, notice: "メールアドレスもしくはパスワードが違います。"
 
     end
   end
 
   def destroy
-    logger.debug("qqqqqqqq")
+    logger.debug("aaaa")
     session[:user_id] = nil
-    redirect_to login_path, notice: "ログアウトしました。" 
+    logger.debug("bbbb")
+    redirect_to login_path,status:303, method: :get, notice: "ログアウトしました。" 
+    logger.debug("cccc")
   end
   
 end

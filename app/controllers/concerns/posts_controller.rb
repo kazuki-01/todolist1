@@ -44,11 +44,10 @@ end
 def update
   @post = Post.find(params[:id])
   if @post.update(title: params[:title])
-    redirect_to posts_path, notice: "リストを編集しました"
+    redirect_to posts_path, notice: "リストを編集しました。"
   else
-    flash.now[:alert] = #動作していない・・・・
     logger.debug("aaaaa")
-    redirect_to edit_post_url, alert: "編集に失敗しました"
+    redirect_to edit_post_url, alert: "編集に失敗しました。"
     logger.debug("bbbbbb")
   end
 end
@@ -57,7 +56,7 @@ def destroy
   @post = Post.find(params[:id])
   @post.destroy
   
-  redirect_to post_path, notice: "投稿を削除しました"
+  redirect_to post_path, notice: "投稿を削除しました。。"
   
 end
 

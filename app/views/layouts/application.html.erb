@@ -17,24 +17,30 @@
         <h2>ToDoリスト</h2>
         </div>
         <div class="header-right">
-          <% if current_user.nil? %>
-            <%= link_to "トップ", root_path %>
-            <%= link_to "新規登録", new_user_path %>
-            <%= link_to "ログイン", login_path %>
-          <% else %>
-            <%= link_to "ホーム", home_path %>
-            <%= link_to "リスト一覧", posts_path %>
-            <%= link_to t("ログアウト"), logout_path, method: :get, data: {turbo_method: :delete, turbo_confirm: 'ログアウトしてよろしいですか？'} %>
-          <% end %>
+
+            <% if current_user.nil? %>
+             <%= link_to "トップ", root_path %>
+             <%= link_to "新規登録", new_user_path %>
+             <%= link_to "ログイン", login_path %>
+            <% else %>
+              <%= link_to "ホーム", home_path %>
+              <%= link_to "リスト一覧", posts_path %>
+              <%= link_to t("ログアウト"), logout_path, method: :delete, data: {turbo_method: :delete, turbo_confirm: 'ログアウトしてよろしいですか？'} %>
+            <% end %>
         </div>
     </div>
   </header>
  
- <div class="messege">
+ <div class="notice">
   <%= notice  %>
  </div>
-  <%= alert %>
-  <%= yield %>
+
+ <div class="alert">
+    <%= alert %>
+ </div>
+
+    <%= yield %>
+
 
 <footer>
     <div class="container">
