@@ -49,9 +49,23 @@ class UsersController < ApplicationController
 
 
   def destroy
-    logger.debug("qqqqqqqq")
+    logger.debug("ssssaaaaa")
+    @user = current_user
+    logger.debug("dddddddd")
+    @user.destroy
+    logger.debug("aaaaa")
     session[:user_id] = nil
-    redirect_to login_path, notice: "ログアウトしました。" 
+    redirect_to login_path method: :get, notice: "ユーザーを削除しました。" 
+  end
+
+  def withdrawal
+    @opinion = Opinion.new
+  end
+
+  def withdrawal_cerate
+    @opinion = Opinion.new(cause: params[:cause], opinion: params[:opinion])
+    @opinion.save
+    render destroy
   end
 
   private

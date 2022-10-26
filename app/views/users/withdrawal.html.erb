@@ -33,6 +33,8 @@
        <%= link_to "ユーザー情報画面に戻る", user_path, class: "btn" %>
     </div>
 
+    <%= link_to "削除", user_path, data: {turbo_method: :delete, turbo_confirm: '削除してよろしいですか？'} %>
+
     </form>
   </div>
 </div>
