@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/check' => 'users#check'
   resources :posts
   post '/posts/:id/toggle' => 'posts#toggle'
+  get 'withdrawal', to: 'users#withdrawal'
+  post 'withdrawal', to: 'users#withdrawal_cerate'
 
   get 'login', to: "sessions#new"
   post 'login', to: "sessions#create"

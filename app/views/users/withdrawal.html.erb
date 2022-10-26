@@ -1,0 +1,38 @@
+<div class="mein-wrapper">
+  <div class="container">
+    <div class="page-title">
+        <h1>退会を検討されている方へ</h1>
+    </div>
+    <%= form_with url: withdrawal_path, method: "post" %>
+    <div class="top-wrapper">
+        <h2 class="heading-w">・退会理由を下記より選択してください。</h2>
+          <ul>
+            <li>
+              <input type="radio" id="1" name="cause" value="使いにくかった" checked>
+              <label for="1">使いにくかった</label>
+            </li>
+            <li>
+              <input type="radio" id="2" name="cause" value=">他にもっと良いサービスを見つけた">
+              <label for="2">他にもっと良いサービスを見つけた</label>
+            </li>
+            <li>
+              <input type="radio" id="3" name="cause" value="その他">
+              <label for="3">その他</label>
+            </li>
+          </ul>
+
+        <h2 class="heading-w">・上記で選択した理由の詳細やご意見などありましたら<br>
+                                 お書きください。(最大100文字まで)</h2>
+      <textarea class="textlines" name="opinion"  placeholder=""></textarea>
+    </div>
+
+    <h3>注意：退会するを押すとすぐに退会手続きが確定されます。</h3>
+
+    <div class="btn-wrapper">
+      <input class="btn t" type="submit" value="退会する">
+       <%= link_to "ユーザー情報画面に戻る", user_path, class: "btn" %>
+    </div>
+
+    </form>
+  </div>
+</div>
