@@ -65,7 +65,12 @@ class UsersController < ApplicationController
   def withdrawal_cerate
     @opinion = Opinion.new(cause: params[:cause], opinion: params[:opinion])
     @opinion.save
-    render destroy
+    @user = current_user
+    logger.debug("dddddddd")
+    @user.destroy
+    logger.debug("aaaaa")
+    session[:user_id] = nil
+    redirect_to login_path,  notice: "ユーザーを削除しました。" 
   end
 
   private
